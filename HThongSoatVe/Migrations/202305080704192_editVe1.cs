@@ -35,7 +35,7 @@
                 c => new
                     {
                         id_nhanvien = c.Int(nullable: false),
-                        sdt = c.Int(),
+                        sdt = c.String(maxLength: 50),
                         pass = c.String(maxLength: 50),
                         tennhanvien = c.String(maxLength: 50),
                         phanquyen = c.String(maxLength: 50),
@@ -84,3 +84,4 @@
         }
     }
 }
+ 
