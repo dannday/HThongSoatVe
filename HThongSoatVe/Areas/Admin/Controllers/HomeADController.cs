@@ -9,7 +9,8 @@ namespace HThongSoatVe.Areas.Admin.Controllers
     public class HomeADController : Controller
     {
         // GET: Admin/HomeAD
-        public ActionResult Login()
+
+        public ActionResult Index()
         {
             return View();
         }
