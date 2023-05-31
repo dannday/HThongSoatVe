@@ -191,6 +191,9 @@
     <Content Include="Areas\Admin\Views\Admin\Login.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\header.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAD\ListEvent.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAD\Report.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAD\CheckIn.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

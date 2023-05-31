@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,6 +16,20 @@ namespace HThongSoatVe.Areas.Admin.Controllers
             return View();
         }
 
-       
+        public ActionResult Report()
+        {
+            return View();
+        }
+
+        public ActionResult ListEvent()
+        {
+            return View();
+        }
+
+        public ActionResult CheckIn()
+        {
+            return View();
+        }
+
     }
 }
