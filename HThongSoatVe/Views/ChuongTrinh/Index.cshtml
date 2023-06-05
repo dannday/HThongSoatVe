@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@*@ViewBag.data*@
+
+<div>
+    @foreach ( var chuongtrinh in ViewBag.data)
+     {
+        <tr>
+            <td>
+                @chuongtrinh.detail.title
+            </td>
+        </tr>
+     }
+</div>

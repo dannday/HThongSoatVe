@@ -15,10 +15,10 @@ namespace HThongSoatVe.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            //if (Session["TKAdmin"] == null)
-            //{
-            //    return RedirectToAction("Login", "Admin");
-            //}
+            if (Session["TKAdmin"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
             return View();
         }
         [HttpGet]

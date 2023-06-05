@@ -223,6 +223,7 @@
     <Content Include="Views\ChuongTrinh\NgheSi.cshtml" />
     <Content Include="Views\ChuongTrinh\CongDong.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ChuongTrinh\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

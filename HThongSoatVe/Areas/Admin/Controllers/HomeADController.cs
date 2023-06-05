@@ -16,6 +16,8 @@ namespace HThongSoatVe.Areas.Admin.Controllers
             return View();
         }
 
+
+
         public ActionResult Report()
         {
             return View();
