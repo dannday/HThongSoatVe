@@ -4,22 +4,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using PagedList;
-using PagedList.Mvc;
 
-
-namespace HThongSoatVe.Controllers
+namespace HThongSoatVe.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class VeController : Controller
     {
+
         DBContext context = new DBContext();
-        
+        // GET: Admin/Ve
         public ActionResult Index()
         {
-           return View();
+            return View();
         }
+        [HttpGet]
+        public ActionResult ThemVe()
+        {
 
-        
-
+            return View();
+        }
     }
 }

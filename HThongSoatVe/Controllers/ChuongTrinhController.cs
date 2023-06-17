@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using HThongSoatVe.Models;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -6,36 +7,51 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace HThongSoatVe.Controllers
 {
     public class ChuongTrinhController : Controller
     {
-        // GET: ChuongTrinh
+       
+        DBContext context = new DBContext();
+        private List<ChuongTrinh> ListCT(int count)
+        {
+            return context.ChuongTrinhs.OrderByDescending(a => a.id_chuongtrinh).Take(count).ToList();
+        }
+        //public ActionResult Index(int? page)
+        //{
+        //    int pagesize = 5;
+        //    int pageNum = (page ?? 1);
+        //    var CTmoi = ListCT(20);
+        //    return View(CTmoi.ToPagedList(pageNum, pagesize));
+        //}
+
+        //public ActionResult AllSP(int? page)
+        //{
+        //    var allSP = from sp in context.ChuongTrinhs select sp;
+
+        //    int pagesize = 5;
+        //    int pageNum = (page ?? 1);
+        //    return View(allSP.ToPagedList(pageNum, pagesize));
+        //}
 
         public ActionResult Index()
         {
-            string path = "http://huefestival.com/mobile_api/index.php?key=88888888&lang=vn&module=get_service_detail&cate_id=2&typedata=1&service_id=225";
-            object chuongtrinh = GetChuongTrinh(path);
-            JObject jObject =  JObject.Parse(chuongtrinh.ToString());
-            ViewBag.data = jObject["detail"];
-
-
             return View();
         }
 
-        public object GetChuongTrinh(string path)
+        public ActionResult ChitietCT(int? id)
         {
-
-            using (WebClient webClient = new WebClient())
+            if (id == null)
             {
-                return JsonConvert.DeserializeObject<object>(
-                    webClient.DownloadString(path));
+                return HttpNotFound();
             }
-
-            
+            var chitietSP = from s in context.ChuongTrinhs where s.id_chuongtrinh == id select s;
+            return View(chitietSP.Single());
         }
-         
+
         public ActionResult TieuDiem()
         {
             return View();

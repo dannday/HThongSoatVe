@@ -15,8 +15,9 @@ namespace HThongSoatVe.Models
         public virtual DbSet<ChuongTrinh> ChuongTrinhs { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Ve> Ves { get; set; }
+
+        public virtual DbSet<TinTuc> TinTucs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

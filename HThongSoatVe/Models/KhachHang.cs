@@ -23,5 +23,11 @@ namespace HThongSoatVe.Models
 
         [StringLength(10)]
         public string id_ve { get; set; }
+
+        [StringLength(50)]
+        public string sdt { get; set; }
+
+        [StringLength(50)]
+        public string pass { get; set; }
     }
 }
