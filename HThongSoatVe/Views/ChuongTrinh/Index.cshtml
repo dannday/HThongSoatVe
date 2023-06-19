@@ -1,4 +1,8 @@
-﻿
+﻿@using HThongSoatVe.Models;
+@using PagedList.Mvc;
+@model IEnumerable<HThongSoatVe.Models.ChuongTrinh>
+
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,7 +17,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
     <style>
-        
+
 
         .w3-bar-block .w3-bar-item {
             padding: 20px
@@ -22,24 +26,25 @@
 </head>
 <body>
 
-   <div class="w3-center">
-       <h2>Danh Sách Vé</h2>
-   </div>
+    <div class="w3-center">
+        <h2>Chương Trình</h2>
+    </div>
 
     <!-- !PAGE CONTENT! -->
     <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
         <!-- First Photo Grid-->
         <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-            <a href="#">
+            <a href="~/ChuongTrinh/ChitietCT">
                 <div class="w3-quarter">
-                    <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
+
+                    <img src="~/img/hue.jpg" alt="Sandwich" style="width:100%"/>
                     <h3>The Perfect Sandwich, A Real NYC Classic</h3>
                     <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
                 </div>
             </a>
         </div>
-            
+
 
         <!-- Pagination -->
         <div class="w3-center w3-padding-32">
@@ -53,9 +58,8 @@
             </div>
         </div>
 
-       
+
         <!-- Footer -->
-            
         <!-- End page content -->
     </div>
 

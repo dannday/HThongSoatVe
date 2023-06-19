@@ -13,7 +13,6 @@ namespace HThongSoatVe.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id_nhanvien { get; set; }
 
-        [StringLength(50)]
         public string sdt { get; set; }
 
         [StringLength(50)]

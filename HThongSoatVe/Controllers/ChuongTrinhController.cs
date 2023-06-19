@@ -4,8 +4,6 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using PagedList.Mvc;
@@ -24,17 +22,19 @@ namespace HThongSoatVe.Controllers
         //{
         //    int pagesize = 5;
         //    int pageNum = (page ?? 1);
-        //    var CTmoi = ListCT(20);
-        //    return View(CTmoi.ToPagedList(pageNum, pagesize));
+        //    var Sachmoi = ListCT(20);
+        //    return View(Sachmoi.ToPagedList(pageNum,pagesize));
         //}
+
+
 
         //public ActionResult AllSP(int? page)
         //{
-        //    var allSP = from sp in context.ChuongTrinhs select sp;
+        //    var allSP = from ct in context.ChuongTrinhs select ct;
 
         //    int pagesize = 5;
         //    int pageNum = (page ?? 1);
-        //    return View(allSP.ToPagedList(pageNum, pagesize));
+        //    return View(allSP.ToPagedList(pageNum,pagesize));
         //}
 
         public ActionResult Index()
@@ -42,20 +42,24 @@ namespace HThongSoatVe.Controllers
             return View();
         }
 
-        public ActionResult ChitietCT(int? id)
-        {
-            if (id == null)
-            {
-                return HttpNotFound();
-            }
-            var chitietSP = from s in context.ChuongTrinhs where s.id_chuongtrinh == id select s;
-            return View(chitietSP.Single());
-        }
-
-        public ActionResult TieuDiem()
+        public ActionResult ChitietCT()
         {
             return View();
         }
+
+        //public ActionResult ChitietCT(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    var chitietSP = from s in context.ChuongTrinhs where s.id_chuongtrinh == id select s;
+        //    return View(chitietSP.Single());
+
+
+        //}
+
+
 
         public ActionResult CongDong()
         {

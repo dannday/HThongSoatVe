@@ -17,6 +17,9 @@ namespace HThongSoatVe.Models
         public string ten { get; set; }
 
         [StringLength(50)]
+        public string hinhanh { get; set; }
+
+        [StringLength(50)]
         public string diadiem { get; set; }
 
         [StringLength(50)]

@@ -16,8 +16,7 @@ namespace HThongSoatVe.Models
         [StringLength(50)]
         public string loai { get; set; }
 
-        [StringLength(50)]
-        public string gia { get; set; }
+        public int? gia { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? ngaysk { get; set; }
@@ -26,6 +25,5 @@ namespace HThongSoatVe.Models
 
         [StringLength(50)]
         public string QRcode { get; set; }
-
     }
 }

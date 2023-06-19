@@ -15,38 +15,13 @@ namespace HThongSoatVe.Models
         public virtual DbSet<ChuongTrinh> ChuongTrinhs { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Ve> Ves { get; set; }
-
-        public virtual DbSet<TinTuc> TinTucs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ChuongTrinh>()
-                .Property(e => e.ten)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ChuongTrinh>()
-                .Property(e => e.diadiem)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ChuongTrinh>()
-                .Property(e => e.mota)
-                .IsUnicode(false);
-
             modelBuilder.Entity<KhachHang>()
-                .Property(e => e.ten)
-                .IsFixedLength();
-
-            modelBuilder.Entity<KhachHang>()
-                .Property(e => e.id_ve)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Ve>()
-                .Property(e => e.loai)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Ve>()
-                .Property(e => e.gia)
+                .Property(e => e.pass)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Ve>()

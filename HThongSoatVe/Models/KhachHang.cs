@@ -13,18 +13,11 @@ namespace HThongSoatVe.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id_khachhang { get; set; }
 
-        [StringLength(10)]
+        [StringLength(50)]
         public string ten { get; set; }
 
-        public int? cccd { get; set; }
+        public DateTime ngaysinh { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime? ngaysinh { get; set; }
-
-        [StringLength(10)]
-        public string id_ve { get; set; }
-
-        [StringLength(50)]
         public string sdt { get; set; }
 
         [StringLength(50)]

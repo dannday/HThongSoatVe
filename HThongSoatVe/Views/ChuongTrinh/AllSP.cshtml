@@ -7,5 +7,67 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>AllSP</h2>
+@*@section Table{
+    <div class="col-md-3" style="margin-top: 30px;">
+        <div class="list-group">
+            <p class="lead">Tất Cả</p>
+            <a href="@Url.Action("AllSP","ChuongTrinh")" class="list-group-item">Tất Cả</a>
+        </div>
+
+        <div class="list-group">
+            <p class="lead">Sản Phẩm</p>
+            @Html.Action("LoaiSP", "ChuongTrinh")
+        </div>
+
+        <div class="list-group">
+            <p class="lead">Nhãn Hiệu</p>
+            @Html.Action("NhanHieu", "ChuongTrinh")
+        </div>
+    </div>
+}*@
+
+
+@foreach (var item in Model)
+{
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <a href="@Url.Action("ChitietCT","ChuongTrinh" , new { id = @item.id_chuongtrinh})">
+                <img style="border-radius: 15%; width: 100%; height: 293px; " alt="@item.ten" >
+            </a>
+            <div class="caption" style="margin-bottom:10px">
+                <h4>
+                    <a href="@Url.Action("ChitietCT","ChuongTrinh" , new { id = @item.id_chuongtrinh})">@item.ten</a>
+                </h4>
+                
+                @*<a href="@Url.Action("ThemGioHang","GioHang",new {masp = @item.id_chuongtrinh, strUrl = Request.Url.ToString() })" class="buy">Thêm Vào Giỏ</a>*@
+            </div>
+
+            <div class="ratings">
+                <p class="pull-right">12 reviews</p>
+                <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+}
+
+@section MenuTrang{
+
+    <div class="MenuTrang">
+
+        @Html.PagedListPager(Model, page => Url.Action("AllSP", new { page = page }))
+    </div>
+    <style>
+        .MenuTrang {
+            text-align: center;
+            justify-content: center;
+            display: inline
+        }
+    </style>
+}
 
