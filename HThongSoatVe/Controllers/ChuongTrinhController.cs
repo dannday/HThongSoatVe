@@ -18,46 +18,46 @@ namespace HThongSoatVe.Controllers
         {
             return context.ChuongTrinhs.OrderByDescending(a => a.id_chuongtrinh).Take(count).ToList();
         }
-        //public ActionResult Index(int? page)
-        //{
-        //    int pagesize = 5;
-        //    int pageNum = (page ?? 1);
-        //    var Sachmoi = ListCT(20);
-        //    return View(Sachmoi.ToPagedList(pageNum,pagesize));
-        //}
-
-
-
-        //public ActionResult AllSP(int? page)
-        //{
-        //    var allSP = from ct in context.ChuongTrinhs select ct;
-
-        //    int pagesize = 5;
-        //    int pageNum = (page ?? 1);
-        //    return View(allSP.ToPagedList(pageNum,pagesize));
-        //}
-
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View();
+            int pagesize = 5;
+            int pageNum = (page ?? 1);
+            var Sachmoi = ListCT(20);
+            return View(Sachmoi.ToPagedList(pageNum, pagesize));
         }
 
-        public ActionResult ChitietCT()
+
+
+        public ActionResult AllSP(int? page)
         {
-            return View();
+            var allSP = from ct in context.ChuongTrinhs select ct;
+
+            int pagesize = 5;
+            int pageNum = (page ?? 1);
+            return View(allSP.ToPagedList(pageNum, pagesize));
         }
 
-        //public ActionResult ChitietCT(int? id)
+        //public ActionResult Index()
         //{
-        //    if (id == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    var chitietSP = from s in context.ChuongTrinhs where s.id_chuongtrinh == id select s;
-        //    return View(chitietSP.Single());
-
-
+        //    return View();
         //}
+
+        //public ActionResult ChitietCT()
+        //{
+        //    return View();
+        //}
+
+        public ActionResult ChitietCT(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            var chitietSP = from s in context.ChuongTrinhs where s.id_chuongtrinh == id select s;
+            return View(chitietSP.Single());
+
+
+        }
 
 
 
